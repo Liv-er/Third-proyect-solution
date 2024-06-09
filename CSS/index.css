@@ -1,0 +1,319 @@
+:root {
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayishblue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* Generals styles for the page */
+body {
+    margin: 0;
+    padding: 0 3.5vw;
+    font-family: "Inter", sans-serif;
+}
+
+p { 
+    color: var(--Dark-grayish-blue); 
+    line-height: 27px;
+}
+
+button { cursor: pointer; }
+
+.menu-desktop { display: none; }
+.img-web3-desktop { display: none; }
+
+/* Headers's styles */
+
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: min-content;
+    padding: 2.5vh 0;
+}
+
+.site-logo {
+    width: 50px;
+    height: 30px;
+}
+
+#btn-menu {
+    background-color: transparent;
+    border: none;
+}
+
+.div-menu { text-align: right; }
+
+/* Estilos para el menu desplegable */
+
+.modal-menu {
+    position: absolute;
+    top: -2vh;
+    left: 110vw;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 30vw;
+    background-color: #000a;
+    display: none;
+    transition: left 5s ease;
+}
+
+.menu-cont {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.menu-cont p { 
+    margin: 0; 
+    text-align: right;
+    padding: 2.5vh 4vw;
+}
+
+#btn-close-menu {
+    background-color: #fff;
+    border: none;
+}
+
+ul {
+    padding: 0;
+    margin-top: 7vh;
+}
+
+.li-menu { 
+    list-style: none; 
+    margin: 25px;
+}
+
+.a-menu { 
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--Very-dark-blue);
+}
+
+/* Estilos de la primera seccion de la pagina */
+
+
+.img-web3-mobile { width: 100%; }
+
+h1 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 50px;
+    margin: 0;
+    margin-top: 20px;
+    color: var(--Very-dark-blue);
+}
+
+.btn-read {
+    background-color: var(--Soft-red);
+    border: none;
+    width: 55%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+/* Estilos para la segunda seccion */
+
+aside {
+    background-color: var(--Very-dark-blue);
+    color: var(--Off-white);
+    padding: 1vh 5vw;
+    margin: 7vh 0;
+}
+
+aside h2 {
+    color: var(--Soft-orange);
+    font-size: 33px;
+}
+
+aside h3 { margin-top: 5vh; }
+
+.p-border {
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+    padding: 0;
+    padding-bottom: 5vh;
+}
+
+
+/* Estilos para la ultima seccion */
+
+.item-footer {
+    display: flex;
+    height: min-content;
+    margin: 4vh 0;
+}
+
+.item-footer h3 {
+    margin: 0;
+    margin-bottom: 7px; 
+    color: var(--Soft-red);
+    font-size: 35px;
+}
+.item-footer h4 {
+    margin: 0; 
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--Very-dark-blue);
+}
+.item-footer p { margin-top: 7px; }
+
+.image-item {
+    height: 150px;
+    margin-right: 6vw;
+}
+
+/* Estilos para desktop */
+
+@media screen and (min-width : 900px) {
+
+    body {
+        padding: 3.5vh 4vw;
+    }
+
+    p { font-size: 16px; }
+
+    .div-menu { display: none; }
+
+    .menu-desktop {
+        display: block;
+        text-align: right;
+    }
+
+    .menu-desktop a {
+        display: inline-block;
+        color: var(--Dark-grayish-blue);
+        margin-left: 3vw;
+        height: 100%;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "content content sidebar"
+        "content content sidebar"
+        "footer footer footer";
+    }
+
+
+
+    header { grid-area: header; margin-bottom: 5vh; }
+
+    .site-logo {
+        width: 60px;
+        height: 40px;
+    }
+
+    .a-menu { font-size: 15px; }
+
+    .main { 
+        grid-area: content; 
+        width: min-content;
+    }
+
+    .img-web3-desktop {
+        display: block;
+        width: 60vw;
+        margin-bottom: 2vh;
+    }
+
+    .img-web3-mobile { display: none; }
+
+    .div-cont-flex {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .special-section {
+        padding: 0;
+        padding-left: 1%;
+        width: 100%;
+    }
+
+    .btn-read {
+        height: 45px;
+        width: 57%;
+        margin-top: 2vh;
+        font-size: 13px;
+        letter-spacing: 4px;
+    }
+
+    aside {
+        grid-area: sidebar;
+        box-sizing: border-box;
+        width: 30vw;    
+        height: min-content;
+        margin: 0;
+        margin-left: 2vw;
+        padding: 2vh 2vw;
+    }
+
+    aside div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    aside h2 {
+        margin: 10px 0;
+        font-size: 37px;
+    }
+
+    aside h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    aside p {
+        letter-spacing: 1px;
+        margin: 0;
+        padding-bottom: 3vh;
+    }
+
+    footer { 
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: min-content;
+        margin-top: 5vh;
+    }
+
+    .item-footer { height: max-content; }
+
+    .item-footer section {
+        margin-right: 20px;
+    }
+
+    .item-footer h3 {
+        font-size: 35px;
+    }
+
+    .item-footer h4 {
+        font-size: 20px;
+    }
+
+    .item-footer p { margin-bottom: 0;}
+
+    .image-item {
+        width: 100px;
+        height: 150px;
+        margin: 0;
+    }
+
+}
+
+/* Default styles of Front-end challenge */
+.attribution { font-size: 15px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
